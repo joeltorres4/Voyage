@@ -23,7 +23,7 @@ def hotels(destinations):
     return "displaying available hotels in destination..."
 
 
-#param could be hotel or rental
+# param could be hotel or rental
 def reserve(reservation):
     return "reserving hotel/car..."
 
@@ -36,7 +36,7 @@ def tours(destination):
     return "displaying available tours on given destination..."
 
 
-#tours is a list of places to visit
+# tours is a list of places to visit
 def visit(tours):
     return "reserve tour(s) on given destination..."
 

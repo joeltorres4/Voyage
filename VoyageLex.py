@@ -27,8 +27,10 @@ tokens = [
     'HOTEL',
     'RENTAL',
     'TOUR',
-    'DAYS'
+    'DAYS',
+    'ID'
 ] + list(reserved.values())
+
 
 # Regular expression rules for simple tokens
 t_NAME = r'[a-zA-Z]'
@@ -38,10 +40,10 @@ t_DAYS = r'[0-9]{3}' # DAYS of rental car
 
 # Define a rule for reserved words
 def t_ID(t):
-    #r'\b[a-z]+\b'
     r'[a-zA-Z_][a-zA-Z_0-9]*'
-    t.type = reserved.get(t.value, 'ID')    # Check for reserved words
+    t.type = reserved.get(t.value,'ID')    # Check for reserved words
     return t
+
 
 # Define a rule so we can track line numbers
 def t_newline(t):
@@ -50,6 +52,7 @@ def t_newline(t):
 
 # A string containing ignored characters (spaces and tabs)
 t_ignore = ' \t'
+
 
 # Error handling rule
 def t_error(t):

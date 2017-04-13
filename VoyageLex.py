@@ -31,14 +31,19 @@ tokens = ['NAME',
           ] + list(reserved.values())
 
 # Regular expression rules for simple tokens
-t_NAME = r'[a-zA-Z]+'
-t_DESTINATION = r'[a-zA-Z]+'
 t_DATE = r'/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/'
-t_AIRLINE = r'[a-zA-Z]+'
-t_HOTEL = r'[a-zA-Z]+'
-t_RENTAL = r'[a-zA-Z]+'
-t_TOUR = r'[a-zA-Z]+'
 
+def t_NAME(t):
+    r'[a-zA-Z_]+'
+    return t
+
+def t_DESTINATION(t):
+    r'\b[a-zA-Z]+[+]?[a-zA-Z]+\b'
+    return t
+
+def t_AIRLINE(t):
+    r'\b[a-zA-Z]+[+]?[a-zA-Z]+\b'
+    return t
 
 # Define a rule for rental days number
 def t_DAYS(t):
@@ -46,6 +51,16 @@ def t_DAYS(t):
     t.value = int(t.value)
     return t
 
+def t_HOTEL(t):
+    r'\b[a-zA-Z]+[+]?[a-zA-Z]+\b'
+    return t
+
+def t_RENTAL(t):
+    r'\b[a-zA-Z]+[+]?[a-zA-Z]+\b'
+    return t
+def t_TOUR(t):
+    r'\b[a-zA-Z]+[+]?[a-zA-Z]+\b'
+    return t
 
 # Define a rule for reserved words
 def t_ID(t):
@@ -53,7 +68,6 @@ def t_ID(t):
     print(t.value+" is a keyword!")
     t.type = reserved.get(t.value, 'ID')  # Check for reserved words
     return t
-
 
 # Define a rule so we can track line numbers
 def t_newline(t):

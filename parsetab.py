@@ -5,7 +5,7 @@ _tabversion = '3.8'
 
 _lr_method = 'LALR'
 
-_lr_signature = '09E56702A4AC4D244D3AD4488605171C'
+_lr_signature = '4FCB9581C965DF762A2E738BE01BC59C'
     
 _lr_action_items = {'CREATEPACKAGE':([0,],[13,]),'DESTINATIONS':([0,],[14,]),'FLIGHTS':([0,],[15,]),'FLY':([0,],[16,]),'HOTELS':([0,],[17,]),'RESERVE':([0,],[18,]),'STAY':([0,],[19,]),'CARS':([0,],[20,]),'TOURS':([0,],[21,]),'VISIT':([0,],[22,]),'BOOK':([0,],[23,]),'$end':([1,2,3,4,5,6,7,8,9,10,11,12,14,23,27,29,30,31,33,35,36,37,38,],[0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-13,-22,-16,-18,-19,-20,-12,-15,-17,-21,-14,]),'NAME':([13,24,],[24,33,]),'DESTINATION':([15,16,17,20,21,22,],[25,26,27,30,31,32,]),'RENTAL':([18,],[28,]),'HOTEL':([19,],[29,]),'DATE':([25,34,],[34,38,]),'AIRLINE':([26,],[35,]),'DAYS':([28,],[36,]),'TOUR':([32,],[37,]),}
 
@@ -38,14 +38,14 @@ _lr_productions = [
   ('statement -> statement_visit','statement',1,'p_statement','VoyageYacc.py',24),
   ('statement -> statement_book','statement',1,'p_statement','VoyageYacc.py',25),
   ('statement_createpackage -> CREATEPACKAGE NAME NAME','statement_createpackage',3,'p_statement_createpackage','VoyageYacc.py',31),
-  ('statement_destinations -> DESTINATIONS','statement_destinations',1,'p_statement_destinations','VoyageYacc.py',38),
-  ('statement_flights -> FLIGHTS DESTINATION DATE DATE','statement_flights',4,'p_statement_flights','VoyageYacc.py',45),
-  ('statement_fly -> FLY DESTINATION AIRLINE','statement_fly',3,'p_statement_fly','VoyageYacc.py',52),
-  ('statement_hotels -> HOTELS DESTINATION','statement_hotels',2,'p_statement_hotels','VoyageYacc.py',59),
-  ('statement_reserve -> RESERVE RENTAL DAYS','statement_reserve',3,'p_statement_reserve','VoyageYacc.py',66),
-  ('statement_stay -> STAY HOTEL','statement_stay',2,'p_statement_stay','VoyageYacc.py',73),
-  ('statement_cars -> CARS DESTINATION','statement_cars',2,'p_statement_cars','VoyageYacc.py',80),
-  ('statement_tours -> TOURS DESTINATION','statement_tours',2,'p_statement_tours','VoyageYacc.py',87),
-  ('statement_visit -> VISIT DESTINATION TOUR','statement_visit',3,'p_statement_visit','VoyageYacc.py',94),
-  ('statement_book -> BOOK','statement_book',1,'p_statement_book','VoyageYacc.py',101),
+  ('statement_destinations -> DESTINATIONS','statement_destinations',1,'p_statement_destinations','VoyageYacc.py',37),
+  ('statement_flights -> FLIGHTS DESTINATION DATE DATE','statement_flights',4,'p_statement_flights','VoyageYacc.py',43),
+  ('statement_fly -> FLY DESTINATION AIRLINE','statement_fly',3,'p_statement_fly','VoyageYacc.py',49),
+  ('statement_hotels -> HOTELS DESTINATION','statement_hotels',2,'p_statement_hotels','VoyageYacc.py',55),
+  ('statement_reserve -> RESERVE RENTAL DAYS','statement_reserve',3,'p_statement_reserve','VoyageYacc.py',61),
+  ('statement_stay -> STAY HOTEL','statement_stay',2,'p_statement_stay','VoyageYacc.py',67),
+  ('statement_cars -> CARS DESTINATION','statement_cars',2,'p_statement_cars','VoyageYacc.py',73),
+  ('statement_tours -> TOURS DESTINATION','statement_tours',2,'p_statement_tours','VoyageYacc.py',79),
+  ('statement_visit -> VISIT DESTINATION TOUR','statement_visit',3,'p_statement_visit','VoyageYacc.py',85),
+  ('statement_book -> BOOK','statement_book',1,'p_statement_book','VoyageYacc.py',91),
 ]

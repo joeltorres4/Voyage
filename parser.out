@@ -1,5 +1,9 @@
 Created by PLY version 3.8 (http://www.dabeaz.com/ply)
 
+Unused terminals:
+
+    ID
+
 Grammar
 
 Rule 0     S' -> statement
@@ -40,6 +44,7 @@ FLIGHTS              : 14
 FLY                  : 15
 HOTEL                : 18
 HOTELS               : 16
+ID                   : 
 NAME                 : 12 12
 RENTAL               : 17
 RESERVE              : 17

@@ -33,15 +33,16 @@ tokens = [
 
 
 # Regular expression rules for simple tokens
-t_NAME = r'[a-zA-Z]'
+t_NAME = r'[a-zA-Z]+'
 t_DATE = r'/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/'
-t_DAYS = r'[0-9]{3}' # DAYS of rental car
+t_DAYS = r'[0-9]{3}' #DAYS of rental car
 
 
 # Define a rule for reserved words
 def t_ID(t):
-    r'[a-zA-Z_][a-zA-Z_0-9]*'
-    t.type = reserved.get(t.value,'ID')    # Check for reserved words
+    r'[a-zA-Z_][a-zA-Z_0-9]+'
+    #r'[a-zA-Z_][a-zA-Z_0-9]*'
+    t.type = reserved.get(t.value, 'ID')    # Check for reserved words
     return t
 
 

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/EnrollMe.iml" filepath="$PROJECT_DIR$/.idea/EnrollMe.iml" />
+      <module fileurl="file://C:\Users\fggon\OneDrive\Documents\GitHub\Voyage\.idea\EnrollMe.iml" filepath="C:\Users\fggon\OneDrive\Documents\GitHub\Voyage\.idea\EnrollMe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Voyage.iml" filepath="$PROJECT_DIR$/.idea/Voyage.iml" />
     </modules>
   </component>
 </project>

@@ -1,7 +1,7 @@
 # ------------------------------------------------------------
 # VoyageTools.py
 # ------------------------------------------------------------
- places = {
+places = {
     'NY': 'New York City, NY',
     'FL': 'Orlando, FL',
     'NV': 'Las Vegas, NV',
@@ -12,7 +12,7 @@
     'WA': 'Seattle, WA',
     'TN': 'Memphis, TN',
     'GA': 'Atlanta, GA',
-    'OH': 'Cleveland, OH'
+    'OH': 'Cleveland, OH',
 }
 
 def createpackage(lastname, name):
@@ -21,9 +21,8 @@ def createpackage(lastname, name):
 
 def destinations():
    # return "displaying destinations..."
-   print "displaying destinations"
-   for x in places:
-    print (x, ':', places[x])
+    for values in places:
+       print (places[values])
 
 def flights(destination, date1, date2):
     return "displaying flights to given destination on given dates..."

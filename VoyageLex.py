@@ -30,10 +30,15 @@ def t_STRING(t):
     r'[A-Z]+'
     return t
 
+# Define a rule for date format DD/MM/YYYY or D/M/YYYY
+def t_DATE(t):
+    r'\d{1,2}[-/]\d{1,2}[-/]\d{4}'
+    return t
+
 
 # Define a rule for days token used on reserve command
 def t_DAYS(t):
-    r'[0-9]{1,2,3}'
+    r'[0-9]+'
     t.value = int(t.value)
     return t
 

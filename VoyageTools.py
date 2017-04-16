@@ -69,6 +69,7 @@ def destinations():
 
 
 def flights(destination, date1, date2):
+    print("reserving flight to "+destination+" from "+date1 +" to "+date2)
     ticket = {}
     try:
         ticket = flight[loc]
@@ -87,9 +88,11 @@ def hotels(destinations):
     for key, value in hotel.items():
         if destinations in value:
             hot = hot + key + "\n"
-    return hot  # param could be hotel or rental
-def reserve(reservation):
-    return "reserving hotel/car..."
+    return hot
+
+# param could be hotel or rental
+def reserve(reservation, days):
+    return "reserving "+reservation+" for "+ repr(days) + " days"
 
 
 def cars(destination):

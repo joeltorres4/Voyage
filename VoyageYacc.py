@@ -86,7 +86,7 @@ def p_statement_book(p):
 
 
 # ------------------------------------------------------------
-# statement for error handling.
+# Statement for error handling.
 # ------------------------------------------------------------
 def p_error(p):
     # print("Syntax error in input!")

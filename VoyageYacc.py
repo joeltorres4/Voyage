@@ -3,7 +3,7 @@
 # ------------------------------------------------------------
 import ply.yacc as yacc
 
-# Get the token map from the lexer.  This is required.
+# Get the token map from the lexer.
 from VoyageLex import tokens
 
 # Import intermediate code module here
@@ -76,8 +76,8 @@ def p_statement_tours(p):
 
 
 def p_statement_visit(p):
-    'statement_visit : VISIT STRING STRING'
-    res = VoyageTools.visit(p[2], p[3])
+    'statement_visit : VISIT STRING'
+    res = VoyageTools.visit(p[2])
     print(res)
 
 
@@ -91,8 +91,6 @@ def p_statement_book(p):
 # Statement for error handling.
 # ------------------------------------------------------------
 def p_error(p):
-    # print("Syntax error in input!")
-    # print("Syntax error at '%s'" % repr(p))  # p.value)
     print("Oops, something went wrong!")
 
 

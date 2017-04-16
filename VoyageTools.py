@@ -1,7 +1,19 @@
 # ------------------------------------------------------------
 # VoyageTools.py
 # ------------------------------------------------------------
-
+ places = {
+    'NY': 'New York City, NY',
+    'FL': 'Orlando, FL',
+    'NV': 'Las Vegas, NV',
+    'CA': 'Los Angeles, CA',
+    'TX': 'Dallas, TX',
+    'MA': 'Boston, MA',
+    'NC': 'Charlotte, NC',
+    'WA': 'Seattle, WA',
+    'TN': 'Memphis, TN',
+    'GA': 'Atlanta, GA',
+    'OH': 'Cleveland, OH'
+}
 
 def createpackage(lastname, name):
     return "creating package..."

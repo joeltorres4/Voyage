@@ -73,10 +73,12 @@ flight = {
 }
 
 
+
+
 def createpackage(name, lastname):
     global package
     package.create(name,lastname)
-    return "creating package for "+name + " " + lastname
+    return "creating package for " +name + " " + lastname
 
 
 def destinations():
@@ -107,6 +109,7 @@ def hotels(destinations):
         if destinations in value:
             hot = hot + key + "\n"
     return hot  # param could be hotel or rental
+
 def reserve(reservation):
     return "reserving hotel/car..."
 

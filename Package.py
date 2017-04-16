@@ -7,6 +7,7 @@ class Package:
         self.flight = ""
         self.date1 = ""
         self.date2 = ""
+        self.totalNight = 0
         self.hotel = ""
         self.price = 0
         self.car = ""
@@ -35,3 +36,8 @@ class Package:
 
     def tours(self,tour):
         self.tours.append(tour)
+
+    def summary(self):
+        print("Name: " + self.name + " " + self.lastName)
+        print("Destination: " + self.destination)
+        #print("Flight: ")

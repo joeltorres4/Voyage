@@ -40,6 +40,36 @@ flight = {
         'AA': "$450",
         'UA': "$400"
     },
+    'FL': {
+
+    },
+    'NV': {
+
+    },
+    'CA': {
+
+    },
+    'TX': {
+
+    },
+    'MA': {
+
+    },
+    'NC': {
+
+    },
+    'WA': {
+
+    },
+    'TN': {
+
+    },
+    'GA': {
+
+    },
+    'OH': {
+
+    },
 }
 
 
@@ -50,22 +80,6 @@ def createpackage(name, lastname):
 
 
 def destinations():
-    loc = 'NY'
-    ticket = {}
-    try:
-        ticket = flight[loc]
-        for z in ticket:
-            print(airlines[z] + " " + ticket[z])
-    except:
-        return "invalid location"
-
-    # for x in flight:
-    #     if (loc == x)
-    #         ticket = flight
-    #     for y in flight[x]:
-    #         print (airlines[y])
-    #         print (flight[x][y])
-
 
     dest = "\n"
     for values in places:
@@ -74,9 +88,9 @@ def destinations():
 
 
 def flights(destination, date1, date2):
-    ticket = {}
+    package.date(date1,date2)
     try:
-        ticket = flight[loc]
+        ticket = flight[destination]
         for z in ticket:
             print(airlines[z] + " " + ticket[z])
     except:

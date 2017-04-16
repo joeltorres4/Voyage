@@ -19,8 +19,10 @@ class Package:
     def dest(self, destination):
         self.destination = destination
 
-    def flight(self, flight, date1, date2):
+    def flight(self, flight):
         self.flight = flight
+
+    def date(self,date1,date2):
         self.date1 = date1
         self.date2 = date2
 

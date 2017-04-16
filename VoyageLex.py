@@ -27,24 +27,20 @@ tokens = ['NAME',
           'RENTAL',
           'TOUR',
           'DAYS',
+          'XX',
           'ID'
           ] + list(reserved.values())
 
-# Regular expression rules for simple tokens
-t_DATE = r'/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/'
 
-
-def t_DESTINATION(t):
+def t_XX(t):
     r'[A-Z]{2}'
     return t
 
 
-# Define a rule for rental days number
 def t_DAYS(t):
-    r'[0-9]{3}'
+    r'[0-9]{1,2,3}'
     t.value = int(t.value)
     return t
-
 
 # Define a rule for reserved words
 def t_ID(t):

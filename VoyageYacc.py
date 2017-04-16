@@ -36,23 +36,22 @@ def p_statement_createpackage(p):
 def p_statement_destinations(p):
     'statement_destinations : DESTINATIONS'
     res = VoyageTools.destinations()
-    print(res)
 
 
 def p_statement_flights(p):
-    'statement_flights : FLIGHTS DESTINATION DATE DATE'
+    'statement_flights : FLIGHTS XX DATE DATE'
     res = VoyageTools.flights(p[2], p[3], p[4])
     print(res)
 
 
 def p_statement_fly(p):
-    'statement_fly : FLY DESTINATION AIRLINE'
+    'statement_fly : FLY XX XX'
     res = VoyageTools.fly(p[2], p[3])
     print(res)
 
 
 def p_statement_hotels(p):
-    'statement_hotels : HOTELS DESTINATION'
+    'statement_hotels : HOTELS XX'
     res = VoyageTools.hotels(p[2])
     print(res)
 
@@ -70,19 +69,19 @@ def p_statement_stay(p):
 
 
 def p_statement_cars(p):
-    'statement_cars : CARS DESTINATION'
+    'statement_cars : CARS XX'
     res = VoyageTools.cars(p[2])
     print(res)
 
 
 def p_statement_tours(p):
-    'statement_tours : TOURS DESTINATION'
+    'statement_tours : TOURS XX'
     res = VoyageTools.tours(p[2])
     print(res)
 
 
 def p_statement_visit(p):
-    'statement_visit : VISIT DESTINATION TOUR'
+    'statement_visit : VISIT XX TOUR'
     res = VoyageTools.visit(p[2], p[3])
     print(res)
 
@@ -98,7 +97,7 @@ def p_statement_book(p):
 # ------------------------------------------------------------
 def p_error(p):
     #print("Syntax error in input!")
-    #print("Syntax error at '%s'" % repr(p))  # p.value)
+    print("Syntax error at '%s'" % repr(p))  # p.value)
     print("Oops, something went wrong!")
 
 # Build the parser

@@ -24,6 +24,15 @@ airlines = {
     'SA': 'Southwest Airlines',
 }
 
+
+hotel = {
+    'Best Western' : ['NY', 'OH', 'TN','CA','TX','FL'],
+    'Marriott' : ['NY','CA', 'TX', 'MA','NV','FL'],
+    'Holiday Inn' : ['NY', 'WA', 'GA','OH','NC'],
+    'Hilton' : ['MA','TX','NY','WA','CA','TX'],
+    'Sheraton' : ['NY','MA','TX','FL','NC','CA','TN'],
+}
+
 flight = {
     'NY': {
         'AA': "$450",
@@ -73,8 +82,11 @@ def fly(destination, airline):
 
 
 def hotels(destinations):
-    return "displaying available hotels in destination..."
-
+    hot = "\n"
+        for key, value in hotel.items():
+            if destinations in value:
+             hot = hot + key + "\n"
+        return hot
 
 # param could be hotel or rental
 def reserve(reservation):

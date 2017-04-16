@@ -5,9 +5,9 @@ _tabversion = '3.8'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'C391F3C6B2D96D508CE82618ED00CCBD'
+_lr_signature = '3E0503C9B7D3D746BE3E2698D7D94A3B'
     
-_lr_action_items = {'DESTINATION':([6,12,13,17,20,21,],[25,27,28,29,30,31,]),'DAYS':([26,],[34,]),'TOUR':([30,],[35,]),'RESERVE':([0,],[9,]),'AIRLINE':([25,],[33,]),'BOOK':([0,],[1,]),'FLY':([0,],[6,]),'HOTELS':([0,],[12,]),'DATE':([31,36,],[36,38,]),'FLIGHTS':([0,],[21,]),'TOURS':([0,],[17,]),'CARS':([0,],[13,]),'VISIT':([0,],[20,]),'STAY':([0,],[5,]),'$end':([1,2,3,4,7,8,10,11,14,15,16,18,19,23,24,27,28,29,33,34,35,37,38,],[-22,-5,0,-11,-3,-2,-6,-10,-4,-8,-9,-1,-7,-13,-18,-16,-19,-20,-15,-17,-21,-12,-14,]),'CREATEPACKAGE':([0,],[22,]),'NAME':([22,32,],[32,37,]),'RENTAL':([9,],[26,]),'HOTEL':([5,],[24,]),'DESTINATIONS':([0,],[23,]),}
+_lr_action_items = {'FLY':([0,],[11,]),'BOOK':([0,],[12,]),'CREATEPACKAGE':([0,],[13,]),'RESERVE':([0,],[6,]),'TOURS':([0,],[14,]),'CARS':([0,],[15,]),'HOTELS':([0,],[16,]),'$end':([1,2,3,5,7,8,9,10,12,17,18,21,22,23,28,29,30,32,34,35,36,37,38,],[-10,-5,-9,-3,-6,-7,-13,-8,-22,-2,-4,0,-1,-11,-20,-19,-16,-18,-17,-15,-12,-21,-14,]),'DATE':([24,33,],[33,38,]),'FLIGHTS':([0,],[4,]),'VISIT':([0,],[19,]),'AIRLINE':([26,],[35,]),'STAY':([0,],[20,]),'DESTINATION':([4,11,14,15,16,19,],[24,26,28,29,30,31,]),'HOTEL':([20,],[32,]),'NAME':([13,27,],[27,36,]),'RENTAL':([6,],[25,]),'DAYS':([25,],[34,]),'DESTINATIONS':([0,],[9,]),'TOUR':([31,],[37,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -16,7 +16,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'statement_visit':([0,],[11,]),'statement_hotels':([0,],[2,]),'statement':([0,],[3,]),'statement_book':([0,],[4,]),'statement_tours':([0,],[16,]),'statement_destinations':([0,],[8,]),'statement_fly':([0,],[14,]),'statement_cars':([0,],[15,]),'statement_flights':([0,],[7,]),'statement_createpackage':([0,],[18,]),'statement_stay':([0,],[19,]),'statement_reserve':([0,],[10,]),}
+_lr_goto_items = {'statement_visit':([0,],[1,]),'statement_hotels':([0,],[2,]),'statement_tours':([0,],[3,]),'statement_destinations':([0,],[17,]),'statement_fly':([0,],[18,]),'statement':([0,],[21,]),'statement_flights':([0,],[5,]),'statement_reserve':([0,],[7,]),'statement_createpackage':([0,],[22,]),'statement_stay':([0,],[8,]),'statement_book':([0,],[23,]),'statement_cars':([0,],[10,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():

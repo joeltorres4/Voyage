@@ -102,7 +102,7 @@ def flights(destination, date1, date2):
     try:
         ticket = flight[destination]
         for z in ticket:
-            print(airlines[z] + " " + ticket[z])
+            print(airlines[z] + " price: $" + ticket[z])
     except:
         return "invalid location"
 

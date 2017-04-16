@@ -11,14 +11,13 @@ reserved = {
     'fly': 'FLY',
     'hotels': 'HOTELS',
     'reserve': 'RESERVE',
-    'stay': 'STAY',
     'cars': 'CARS',
     'tours': 'TOURS',
     'visit': 'VISIT',
     'book': 'BOOK'
 }
 
-# List of token names. This is always required
+# List of token names.
 tokens = ['STRING',
           'DATE',
           'DAYS',
@@ -26,11 +25,13 @@ tokens = ['STRING',
           ] + list(reserved.values())
 
 
+# Define a rule for general input strings
 def t_STRING(t):
     r'[A-Z]+'
     return t
 
 
+# Define a rule for days token used on reserve command
 def t_DAYS(t):
     r'[0-9]{1,2,3}'
     t.value = int(t.value)

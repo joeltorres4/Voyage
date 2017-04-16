@@ -1,4 +1,3 @@
-
 # ------------------------------------------------------------
 # VoyageYacc.py
 # ------------------------------------------------------------
@@ -10,6 +9,7 @@ from VoyageLex import tokens
 # Import intermediate code module here
 import VoyageTools
 
+
 # Primary reduce statement
 def p_statement(p):
     '''statement :  statement_createpackage
@@ -18,7 +18,6 @@ def p_statement(p):
                   | statement_fly
                   | statement_hotels
                   | statement_reserve
-                  | statement_stay
                   | statement_cars
                   | statement_tours
                   | statement_visit
@@ -62,12 +61,6 @@ def p_statement_reserve(p):
     print(res)
 
 
-def p_statement_stay(p):
-    'statement_stay : STAY STRING'
-    res = VoyageTools.stay(p[2])
-    print(res)
-
-
 def p_statement_cars(p):
     'statement_cars : CARS STRING'
     res = VoyageTools.cars(p[2])
@@ -96,9 +89,10 @@ def p_statement_book(p):
 # statement for error handling.
 # ------------------------------------------------------------
 def p_error(p):
-    #print("Syntax error in input!")
-    print("Syntax error at '%s'" % repr(p))  # p.value)
+    # print("Syntax error in input!")
+    # print("Syntax error at '%s'" % repr(p))  # p.value)
     print("Oops, something went wrong!")
+
 
 # Build the parser
 parser = yacc.yacc()

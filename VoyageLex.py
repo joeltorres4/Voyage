@@ -19,21 +19,15 @@ reserved = {
 }
 
 # List of token names. This is always required
-tokens = ['NAME',
-          'DESTINATION',
+tokens = ['STRING',
           'DATE',
-          'AIRLINE',
-          'HOTEL',
-          'RENTAL',
-          'TOUR',
           'DAYS',
-          'XX',
           'ID'
           ] + list(reserved.values())
 
 
-def t_XX(t):
-    r'[A-Z]{2}'
+def t_STRING(t):
+    r'[A-Z]+'
     return t
 
 
@@ -41,6 +35,7 @@ def t_DAYS(t):
     r'[0-9]{1,2,3}'
     t.value = int(t.value)
     return t
+
 
 # Define a rule for reserved words
 def t_ID(t):

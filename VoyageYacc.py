@@ -28,7 +28,7 @@ def p_statement(p):
 
 
 def p_statement_createpackage(p):
-    'statement_createpackage : CREATEPACKAGE NAME NAME'
+    'statement_createpackage : CREATEPACKAGE STRING STRING'
     res = VoyageTools.createpackage(p[2], p[3])
     print(res)
 
@@ -39,49 +39,49 @@ def p_statement_destinations(p):
 
 
 def p_statement_flights(p):
-    'statement_flights : FLIGHTS XX DATE DATE'
+    'statement_flights : FLIGHTS STRING DATE DATE'
     res = VoyageTools.flights(p[2], p[3], p[4])
     print(res)
 
 
 def p_statement_fly(p):
-    'statement_fly : FLY XX XX'
+    'statement_fly : FLY STRING STRING'
     res = VoyageTools.fly(p[2], p[3])
     print(res)
 
 
 def p_statement_hotels(p):
-    'statement_hotels : HOTELS XX'
+    'statement_hotels : HOTELS STRING'
     res = VoyageTools.hotels(p[2])
     print(res)
 
 
 def p_statement_reserve(p):
-    'statement_reserve : RESERVE RENTAL DAYS'
+    'statement_reserve : RESERVE STRING DAYS'
     res = VoyageTools.reserve(p[2], p[3])
     print(res)
 
 
 def p_statement_stay(p):
-    'statement_stay : STAY HOTEL'
+    'statement_stay : STAY STRING'
     res = VoyageTools.stay(p[2])
     print(res)
 
 
 def p_statement_cars(p):
-    'statement_cars : CARS XX'
+    'statement_cars : CARS STRING'
     res = VoyageTools.cars(p[2])
     print(res)
 
 
 def p_statement_tours(p):
-    'statement_tours : TOURS XX'
+    'statement_tours : TOURS STRING'
     res = VoyageTools.tours(p[2])
     print(res)
 
 
 def p_statement_visit(p):
-    'statement_visit : VISIT XX TOUR'
+    'statement_visit : VISIT STRING STRING'
     res = VoyageTools.visit(p[2], p[3])
     print(res)
 

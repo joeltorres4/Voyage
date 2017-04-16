@@ -24,13 +24,12 @@ airlines = {
     'SA': 'Southwest Airlines',
 }
 
-
 hotel = {
-    'Best Western' : ['NY', 'OH', 'TN','CA','TX','FL'],
-    'Marriott' : ['NY','CA', 'TX', 'MA','NV','FL'],
-    'Holiday Inn' : ['NY', 'WA', 'GA','OH','NC'],
-    'Hilton' : ['MA','TX','NY','WA','CA','TX'],
-    'Sheraton' : ['NY','MA','TX','FL','NC','CA','TN'],
+    'Best Western': ['NY', 'OH', 'TN', 'CA', 'TX', 'FL'],
+    'Marriott': ['NY', 'CA', 'TX', 'MA', 'NV', 'FL'],
+    'Holiday Inn': ['NY', 'WA', 'GA', 'OH', 'NC'],
+    'Hilton': ['MA', 'TX', 'NY', 'WA', 'CA', 'TX'],
+    'Sheraton': ['NY', 'MA', 'TX', 'FL', 'NC', 'CA', 'TN'],
 }
 
 flight = {
@@ -40,8 +39,9 @@ flight = {
     },
 }
 
-def createpackage(lastname, name):
-    return "creating package..."
+
+def createpackage(name, lastname):
+    return "creating package for "+name+" "+lastname
 
 
 def destinations():
@@ -67,6 +67,7 @@ def destinations():
         dest = dest + places[values] + "\n"
     return dest
 
+
 def flights(destination, date1, date2):
     ticket = {}
     try:
@@ -78,17 +79,15 @@ def flights(destination, date1, date2):
 
 
 def fly(destination, airline):
-    return "reserving flight to destination through given airline..."
+    return "reserving flight to " + destination + " with " + airline
 
 
 def hotels(destinations):
     hot = "\n"
-        for key, value in hotel.items():
-            if destinations in value:
-             hot = hot + key + "\n"
-        return hot
-
-# param could be hotel or rental
+    for key, value in hotel.items():
+        if destinations in value:
+            hot = hot + key + "\n"
+    return hot  # param could be hotel or rental
 def reserve(reservation):
     return "reserving hotel/car..."
 

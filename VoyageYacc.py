@@ -98,7 +98,8 @@ def p_statement_book(p):
 # ------------------------------------------------------------
 def p_error(p):
     #print("Syntax error in input!")
-    print("Syntax error at '%s'" % repr(p))  # p.value)
+    #print("Syntax error at '%s'" % repr(p))  # p.value)
+    print("Oops, something went wrong!")
 
 # Build the parser
 parser = yacc.yacc()

@@ -34,17 +34,24 @@ tokens = ['NAME',
 t_DATE = r'/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/'
 
 
+def t_DESTINATION(t):
+    r'[A-Z]{2}'
+    return t
+
+
 # Define a rule for rental days number
 def t_DAYS(t):
     r'[0-9]{3}'
     t.value = int(t.value)
     return t
 
+
 # Define a rule for reserved words
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
     t.type = reserved.get(t.value, 'ID')  # Check for reserved words
     return t
+
 
 # Define a rule so we can track line numbers
 def t_newline(t):

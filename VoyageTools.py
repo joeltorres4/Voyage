@@ -15,6 +15,15 @@ places = {
     'OH': 'Cleveland, OH',
 }
 
+airlines = {
+    'AA': 'American Airlines',
+    'UA': 'United Airlines',
+    'JB': 'Jet Blue',
+    'DA': 'Delta Airlines',
+    'CA': 'Continental Airlines',
+    'SA': "'Southwest Airlines',
+}
+
 def createpackage(lastname, name):
     return "creating package..."
 

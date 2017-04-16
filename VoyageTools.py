@@ -11,7 +11,7 @@ places = {
     'CA': 'Los Angeles, CA',
     'TX': 'Dallas, TX',
     'MA': 'Boston, MA',
-    'NC': 'Charlotte, NC',
+    'DC': 'Washington D.C.',
     'WA': 'Seattle, WA',
     'TN': 'Memphis, TN',
     'GA': 'Atlanta, GA',
@@ -30,45 +30,56 @@ airlines = {
 hotel = {
     'Best Western': ['NY', 'OH', 'TN', 'CA', 'TX', 'FL'],
     'Marriott': ['NY', 'CA', 'TX', 'MA', 'NV', 'FL'],
-    'Holiday Inn': ['NY', 'WA', 'GA', 'OH', 'NC'],
+    'Holiday Inn': ['NY', 'WA', 'GA', 'OH', 'DC'],
     'Hilton': ['MA', 'TX', 'NY', 'WA', 'CA', 'TX'],
-    'Sheraton': ['NY', 'MA', 'TX', 'FL', 'NC', 'CA', 'TN'],
+    'Sheraton': ['NY', 'MA', 'TX', 'FL', 'DC', 'CA', 'TN'],
 }
 
 flight = {
     'NY': {
-        'AA': "$450",
-        'UA': "$400"
+        'AA': 450,
+        'UA': 400
     },
     'FL': {
-
+        'JB': 175,
+        'DA': 200
     },
     'NV': {
+        'CA':550,
+        'SW':575
 
     },
     'CA': {
-
+        'AA':750,
+        'DA':725
     },
     'TX': {
-
+        'SW': 435,
+        'JB': 450
     },
     'MA': {
-
+        'CA': 350,
+        'AA': 325
     },
-    'NC': {
-
+    'DC': {
+        'DA': 430,
+        'UA': 450
     },
     'WA': {
-
+        'JB': 615,
+        'AA': 625
     },
     'TN': {
-
+        'UA': 475,
+        'SW': 500
     },
     'GA': {
-
+        'JB': 300,
+        'AA': 325
     },
     'OH': {
-
+        'CA': 425,
+        'DA': 450
     },
 }
 
@@ -82,7 +93,6 @@ def createpackage(name, lastname):
 def destinations():
     dest = "\n"
     for values in places:
-        #print(places[values])
         dest = dest + places[values] + "\n"
     return dest
 
@@ -98,6 +108,14 @@ def flights(destination, date1, date2):
 
 
 def fly(destination, airline):
+    try:
+        package.dest(places[destination])
+    except:
+        return "invalid destination"
+    try:
+        package.flight(airlines[airline])
+    except:
+        return "invalid airline"
     return "reserving flight to " + destination + " with " + airline
 
 

@@ -13,7 +13,10 @@ class Package:
         self.car = ""
         self.tours = []
 
-    def create(self,name, lastName):
+    def __call__(self, *args, **kwargs):
+        return self
+
+    def create(self, name, lastName):
         self.name = name
         self.lastName = lastName
 

@@ -3,7 +3,7 @@
 # ------------------------------------------------------------
 import Package
 
-package = Package()
+package = Package.Package()
 places = {
     'NY': 'New York City, NY',
     'FL': 'Orlando, FL',
@@ -82,6 +82,7 @@ def createpackage(name, lastname):
 def destinations():
     dest = "\n"
     for values in places:
+        #print(places[values])
         dest = dest + places[values] + "\n"
     return dest
 

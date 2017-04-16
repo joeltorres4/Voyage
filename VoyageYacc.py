@@ -35,6 +35,8 @@ def p_statement_createpackage(p):
 def p_statement_destinations(p):
     'statement_destinations : DESTINATIONS'
     res = VoyageTools.destinations()
+    print(res)
+
 
 
 def p_statement_flights(p):

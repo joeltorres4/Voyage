@@ -1,7 +1,8 @@
 
 class Package:
-    def __init__(self, Name):
-        self.name = Name
+    def __init__(self):
+        self.name = ""
+        self.lastName = ""
         self.destination = ""
         self.flight = ""
         self.date1 = ""
@@ -10,6 +11,10 @@ class Package:
         self.price = 0
         self.car = ""
         self.tours = []
+
+    def create(self,name, lastName):
+        self.name = name
+        self.lastName = lastName
 
     def dest(self, destination):
         self.destination = destination

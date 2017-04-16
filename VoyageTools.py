@@ -1,6 +1,9 @@
 # ------------------------------------------------------------
 # VoyageTools.py
 # ------------------------------------------------------------
+import Package
+
+package = Package()
 places = {
     'NY': 'New York City, NY',
     'FL': 'Orlando, FL',
@@ -41,7 +44,9 @@ flight = {
 
 
 def createpackage(name, lastname):
-    return "creating package for "+name+" "+lastname
+    global package
+    package.create(name,lastname)
+    return "creating package for "+name + " " + lastname
 
 
 def destinations():

@@ -1,6 +1,9 @@
 # ------------------------------------------------------------
 # VoyageTools.py
 # ------------------------------------------------------------
+import Package
+
+package = Package()
 places = {
     'NY': 'New York City, NY',
     'FL': 'Orlando, FL',
@@ -37,30 +40,48 @@ flight = {
         'AA': "$450",
         'UA': "$400"
     },
+    'FL': {
+
+    },
+    'NV': {
+
+    },
+    'CA': {
+
+    },
+    'TX': {
+
+    },
+    'MA': {
+
+    },
+    'NC': {
+
+    },
+    'WA': {
+
+    },
+    'TN': {
+
+    },
+    'GA': {
+
+    },
+    'OH': {
+
+    },
 }
 
 
+
+
 def createpackage(name, lastname):
-    return "creating package for "+name+" "+lastname
+    global package
+    package.create(name,lastname)
+    return "creating package for " +name + " " + lastname
 
 
 def destinations():
-    loc = 'NY'
-    ticket = {}
-    try:
-        ticket = flight[loc]
-        for z in ticket:
-            print(airlines[z] + " " + ticket[z])
-    except:
-        return "invalid location"
-
-    # for x in flight:
-    #     if (loc == x)
-    #         ticket = flight
-    #     for y in flight[x]:
-    #         print (airlines[y])
-    #         print (flight[x][y])
-
 
     dest = "\n"
     for values in places:
@@ -69,10 +90,9 @@ def destinations():
 
 
 def flights(destination, date1, date2):
-    print("reserving flight to "+destination+" from "+date1 +" to "+date2)
-    ticket = {}
+    package.date(date1,date2)
     try:
-        ticket = flight[loc]
+        ticket = flight[destination]
         for z in ticket:
             print(airlines[z] + " " + ticket[z])
     except:
@@ -88,11 +108,10 @@ def hotels(destinations):
     for key, value in hotel.items():
         if destinations in value:
             hot = hot + key + "\n"
-    return hot
+    return hot  # param could be hotel or rental
 
-# param could be hotel or rental
-def reserve(reservation, days):
-    return "reserving "+reservation+" for "+ repr(days) + " days"
+def reserve(reservation):
+    return "reserving hotel/car..."
 
 
 def cars(destination):

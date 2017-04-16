@@ -21,7 +21,14 @@ airlines = {
     'JB': 'Jet Blue',
     'DA': 'Delta Airlines',
     'CA': 'Continental Airlines',
-    'SA': "'Southwest Airlines',
+    'SA': 'Southwest Airlines',
+}
+
+flight = {
+    'NY': {
+        'AA': "$450",
+        'UA': "$400"
+    },
 }
 
 def createpackage(lastname, name):
@@ -29,13 +36,36 @@ def createpackage(lastname, name):
 
 
 def destinations():
-    dest = ""
+    loc = 'NY'
+    ticket = {}
+    try:
+        ticket = flight[loc]
+        for z in ticket:
+            print(airlines[z] + " " + ticket[z])
+    except:
+        return "invalid location"
+
+    # for x in flight:
+    #     if (loc == x)
+    #         ticket = flight
+    #     for y in flight[x]:
+    #         print (airlines[y])
+    #         print (flight[x][y])
+
+
+    dest = "\n"
     for values in places:
         dest = dest + places[values] + "\n"
     return dest
 
 def flights(destination, date1, date2):
-    return "displaying flights to given destination on given dates..."
+    ticket = {}
+    try:
+        ticket = flight[loc]
+        for z in ticket:
+            print(airlines[z] + " " + ticket[z])
+    except:
+        return "invalid location"
 
 
 def fly(destination, airline):

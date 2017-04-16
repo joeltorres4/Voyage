@@ -20,8 +20,10 @@ def createpackage(lastname, name):
 
 
 def destinations():
-    return "displaying destinations..."
-
+   # return "displaying destinations..."
+   print "displaying destinations"
+   for x in places:
+    print (x, ':', places[x])
 
 def flights(destination, date1, date2):
     return "displaying flights to given destination on given dates..."

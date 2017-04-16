@@ -73,16 +73,13 @@ flight = {
 }
 
 
-
-
 def createpackage(name, lastname):
     global package
-    package.create(name,lastname)
-    return "creating package for " +name + " " + lastname
+    package.create(name, lastname)
+    return "creating package for " + name + " " + lastname
 
 
 def destinations():
-
     dest = "\n"
     for values in places:
         dest = dest + places[values] + "\n"
@@ -90,7 +87,7 @@ def destinations():
 
 
 def flights(destination, date1, date2):
-    package.date(date1,date2)
+    package.date(date1, date2)
     try:
         ticket = flight[destination]
         for z in ticket:
@@ -110,8 +107,9 @@ def hotels(destinations):
             hot = hot + key + "\n"
     return hot  # param could be hotel or rental
 
-def reserve(reservation):
-    return "reserving hotel/car..."
+
+def reserve(reservation, days):
+    return "reserving " + reservation + " for " + repr(days) + "days"
 
 
 def cars(destination):

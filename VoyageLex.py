@@ -30,7 +30,7 @@ def t_STRING(t):
     r'[A-Z]+'
     return t
 
-# Define a rule for date format DD/MM/YYYY or D/M/YYYY
+# Define a rule for date format DD/MM/YYYY (DD and MM can be one digit)
 def t_DATE(t):
     r'\d{1,2}[-/]\d{1,2}[-/]\d{4}'
     return t

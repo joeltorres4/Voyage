@@ -61,11 +61,9 @@ def p_statement_reserve(p):
     res = VoyageTools.reserve(p[2], p[3])
     print(res)
 
-
 def p_statement_cars(p):
     'statement_cars : CARS STRING'
-    res = VoyageTools.cars(p[2])
-    print(res)
+    VoyageTools.cars(p[2])
 
 
 def p_statement_tours(p):

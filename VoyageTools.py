@@ -4,7 +4,6 @@
 import Package
 
 package = Package.Package()
-record = open("record.txt", "w")
 
 places = {
     'NY': "New York City, NY",
@@ -30,11 +29,11 @@ airlines = {
 }
 
 hotel = {
-    'Best Western': ['NY', 'OH', 'TN', 'CA', 'TX', 'FL'],
-    'Marriott': ['NY', 'CA', 'TX', 'MA', 'NV', 'FL'],
-    'Holiday Inn': ['NY', 'WA', 'GA', 'OH', 'DC'],
-    'Hilton': ['MA', 'TX', 'NY', 'WA', 'CA', 'TX'],
-    'Sheraton': ['NY', 'MA', 'TX', 'FL', 'DC', 'CA', 'TN'],
+    'BEST WESTERN': ['NY', 'OH', 'TN', 'CA', 'TX', 'FL'],
+    'MARRIOTT': ['NY', 'CA', 'TX', 'MA', 'NV', 'FL'],
+    'HOLIDAY INN': ['NY', 'WA', 'GA', 'OH', 'DC'],
+    'HILTON': ['MA', 'TX', 'NY', 'WA', 'CA', 'TX'],
+    'SHERATON': ['NY', 'MA', 'TX', 'FL', 'DC', 'CA', 'TN'],
 }
 
 flight = {
@@ -86,32 +85,39 @@ flight = {
 }
 
 listTours = {
-    'NY':{'Statue of Liberty':'$57.00','Empire State Building':'$34.00','9/11 Memorial Museum':'$24.00'},
-    'FL':{'Universal Studios Theme Park':'$125.00','Kennedy Space Center':'$54.00','Florida Everglades':'$25.00'},
-    'NV':{'Cirque du Soleil':'$145.00','Grand Canyon National Park':'$78.00','Titanic: The Artifact Exhibition':'$38.00'},
-    'CA':{'Hollywood Strip Helicopter Flight':'$200.00','Griffith Observatory':'$50.00','Legends of Hollywood':'$80.00'},
-    'TX':{'Dallas Attraction Tours':'$25.00','The George W. Bush Presidential Library and Museum':'$48.00','Dallas City Pass':'$50.00'},
-    'MA':{'Fenway Park Tour':'$30.00','Museum of Fine Arts':'$25.00','Cambridge, Lexington and Cocord':'$48.00'},
-    'DC':{'Mount Vernon and Arlington National Cementery':'$105.00','Smithsonian National Air and Museum':'$25.00','Fords Theater':'$20.00'},
-    'WA':{'Museum of Flight':'$21.00','Space Needle':'$25.00','Boeing Factory Tour':'$40.00'},
-    'TN':{'Elvis Presley Graceland VIP Tour':'$90.00','National Civil Rights Museum':'$35.00','Sun Studio Tour':'$24.00'},
-    'GA':{'Georgia Aquarium':'$44.00','CNN Atlanta Studio Tour':'$16.00','World of Coca Cola':'$20.00'},
-    'OH':{'Rock and Roll Hall of Fame':'$25.00','Cleveland Museum of Art':'$30.00','USS Cod Submarin Memorial':'$15.00'}
+    'NY': {'Statue of Liberty': '$57.00', 'Empire State Building': '$34.00', '9/11 Memorial Museum': '$24.00'},
+    'FL': {'Universal Studios Theme Park': '$125.00', 'Kennedy Space Center': '$54.00', 'Florida Everglades': '$25.00'},
+    'NV': {'Cirque du Soleil': '$145.00', 'Grand Canyon National Park': '$78.00',
+           'Titanic: The Artifact Exhibition': '$38.00'},
+    'CA': {'Hollywood Strip Helicopter Flight': '$200.00', 'Griffith Observatory': '$50.00',
+           'Legends of Hollywood': '$80.00'},
+    'TX': {'Dallas Attraction Tours': '$25.00', 'The George W. Bush Presidential Library and Museum': '$48.00',
+           'Dallas City Pass': '$50.00'},
+    'MA': {'Fenway Park Tour': '$30.00', 'Museum of Fine Arts': '$25.00', 'Cambridge, Lexington and Cocord': '$48.00'},
+    'DC': {'Mount Vernon and Arlington National Cementery': '$105.00', 'Smithsonian National Air and Museum': '$25.00',
+           'Fords Theater': '$20.00'},
+    'WA': {'Museum of Flight': '$21.00', 'Space Needle': '$25.00', 'Boeing Factory Tour': '$40.00'},
+    'TN': {'Elvis Presley Graceland VIP Tour': '$90.00', 'National Civil Rights Museum': '$35.00',
+           'Sun Studio Tour': '$24.00'},
+    'GA': {'Georgia Aquarium': '$44.00', 'CNN Atlanta Studio Tour': '$16.00', 'World of Coca Cola': '$20.00'},
+    'OH': {'Rock and Roll Hall of Fame': '$25.00', 'Cleveland Museum of Art': '$30.00',
+           'USS Cod Submarine Memorial': '$15.00'}
 }
 
 rental_spot = {
-    'Hertz':{'$50.00':['NY','OH','FL','CA','FL']},
-    'Avis':{'$55.00':['NV','GA','TX','TN','MA']},
-    'Enterprise':{'$52.00':['NY','OH','DC','MA','CA']},
-    'Dollar':{'$60.00':['CA','TN','MA','WA','TX']},
-    'Thrifty':{'$49.00':['CA','TX','TN','MA','DC','FL']}
+    'Hertz': {'50.00': ['NY', 'OH', 'FL', 'CA', 'FL']},
+    'Avis': {'55.00': ['NV', 'GA', 'TX', 'TN', 'MA']},
+    'Enterprise': {'52.00': ['NY', 'OH', 'DC', 'MA', 'CA']},
+    'Dollar': {'60.00': ['CA', 'TN', 'MA', 'WA', 'TX']},
+    'Thrifty': {'49.00': ['CA', 'TX', 'TN', 'MA', 'DC', 'FL']}
 }
+
 
 def createpackage(name, lastname):
     global package
     package = Package.Package()
     package.create(name, lastname)
-    return "creating package for " + name + " " + lastname
+    return "Package created for " + name + " " + lastname
 
 
 def destinations():
@@ -129,7 +135,7 @@ def flights(destination, date1, date2):
         for x, y in ticket.items():
             print(airlines[x], y)
     except:
-        return "invalid location"
+        return "Invalid location"
 
 
 def fly(destination, airline):
@@ -143,8 +149,8 @@ def fly(destination, airline):
         flight[destination][airline]
         package.airline(airlines[airline])
     except:
-        return "invalid airline"
-    return "reserving flight to " + places[destination] + " with " + airlines[airline]
+        return "Invalid airline"
+    return "Flight to " + places[destination] + " with " + airlines[airline] + " reserved successfully"
 
 
 def hotels(destinations):
@@ -152,23 +158,47 @@ def hotels(destinations):
     for key, value in hotel.items():
         if destinations in value:
             hot = hot + key + "\n"
-    return hot  # param could be hotel or rental
+    return hot
 
 
+# param could be hotel or rental
 def reserve(reservation, days):
-    return "reserving " + reservation + " for " + repr(days) + "days"
+    global package
+    reservation_title = reservation.title()
+    # check if hotel or car
+    if reservation in hotel:
+        hotel_price = 0  # remove when hotel prices are set
+        package.hotel(reservation_title, hotel_price)
+        return "Reserved " + repr(days) + " days in " + reservation_title + " hotel"
+    elif reservation_title in rental_spot:
+        # car rental
+        for price in rental_spot[reservation_title]:  # to extract key (price)
+            package.car(reservation_title, price, days)
+        return "Reserved " + repr(days) + " days with " + reservation_title + " car rental"
+    else:
+        return "Invalid reservation"
 
 
 def cars(destination):
-    return "displaying available car rentals in destination..."
+    # check if valid destination
+    if destination not in places:
+        print("Invalid destination")
+        return
+
+    # valid destination
+    for company, info in rental_spot.items():
+        price = info.keys()
+        locations = list(info.values()).pop()
+        if destination in locations:
+            print(company, '$'.join(price))
 
 
 def tours(destination):
     global package
     try:
         list = listTours[destination]
-        for x,y in list.items():
-            print(x,y)
+        for x, y in list.items():
+            print(x, y)
     except:
         print("invalid location")
     return "\n"
@@ -183,8 +213,10 @@ def book():
     global package
     if not package.flight == "":
         # Save package summary to file
-        record.write(package.summary()+"\n")
+        record = open("record.txt", "a")
+        record.write(package.summary() + "\n")
+        record.close()
         # Print package summary to console
         return package.summary()
     else:
-        return "Client package not complete"
+        return "Package not ready to book"

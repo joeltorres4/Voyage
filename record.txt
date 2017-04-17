@@ -1,0 +1,14 @@
+Name: IGOR BU
+Destination: New York City, NY
+Airline: American Airlines
+Hotel: 
+Rental Car: 
+Tours: []
+Total Price: 0
+Name: JOEL TORRES
+Destination: Los Angeles, CA
+Airline: American Airlines
+Hotel: 
+Rental Car: 
+Tours: []
+Total Price: 0

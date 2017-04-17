@@ -31,10 +31,11 @@ class Package:
 
     def hotel(self, hotel, price):
         self.hotel = hotel
-        self.price = price
+        self.price += price
 
-    def car(self, car):
+    def car(self, car, price, days):
         self.car = car
+        self.price += price * days
 
     def tours(self, tour):
         self.tours.append(tour)

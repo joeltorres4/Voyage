@@ -41,8 +41,7 @@ def p_statement_destinations(p):
 
 def p_statement_flights(p):
     'statement_flights : FLIGHTS STRING DATE DATE'
-    res = VoyageTools.flights(p[2], p[3], p[4])
-    print(res)
+    VoyageTools.flights(p[2], p[3], p[4])
 
 
 def p_statement_fly(p):

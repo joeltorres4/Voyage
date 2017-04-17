@@ -1,4 +1,3 @@
-
 class Package:
     def __init__(self):
         self.name = ""
@@ -26,21 +25,22 @@ class Package:
     def flight(self, flight):
         self.flight = flight
 
-    def date(self,date1,date2):
+    def date(self, date1, date2):
         self.date1 = date1
         self.date2 = date2
 
-    def hotel(self,hotel, price):
+    def hotel(self, hotel, price):
         self.hotel = hotel
         self.price = price
 
     def car(self, car):
         self.car = car
 
-    def tours(self,tour):
+    def tours(self, tour):
         self.tours.append(tour)
 
     def summary(self):
-        print("Name: " + self.name + " " + self.lastName)
-        print("Destination: " + self.destination)
-        #print("Flight: ")
+        return "Name: " + self.name + " " + self.lastName + \
+               "\nDestination: " + self.destination + "\nAirline: " + self.flight + \
+               "\nHotel: " + self.hotel + "\nRental Car: " + self.car + "\nTours: " + repr(self.tours) + \
+               "\nTotal Price: " + repr(self.price)

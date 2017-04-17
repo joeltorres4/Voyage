@@ -4,6 +4,8 @@
 import Package
 
 package = Package.Package()
+record = open("record.txt", "w")
+
 places = {
     'NY': 'New York City, NY',
     'FL': 'Orlando, FL',
@@ -45,13 +47,13 @@ flight = {
         'DA': 200
     },
     'NV': {
-        'CA':550,
-        'SW':575
+        'CA': 550,
+        'SW': 575
 
     },
     'CA': {
-        'AA':750,
-        'DA':725
+        'AA': 750,
+        'DA': 725
     },
     'TX': {
         'SW': 435,
@@ -100,9 +102,9 @@ def destinations():
 def flights(destination, date1, date2):
     package.date(date1, date2)
     try:
-        ticket = flight[destination]
-        for z in ticket:
-            print(airlines[z] + " price: $" + ticket[z])
+        ticket = flight.get(destination)
+        for x, y in ticket.items():
+            print(x, y)
     except:
         return "invalid location"
 
@@ -113,7 +115,7 @@ def fly(destination, airline):
     except:
         return "invalid destination"
     try:
-        package.flight(airlines[airline])
+        package.flight(airlines.get(airline))
     except:
         return "invalid airline"
     return "reserving flight to " + destination + " with " + airline
@@ -145,4 +147,10 @@ def visit(tours):
 
 
 def book():
-    return "complete package reservation..."
+    if not package.flight == "":
+        # Save package summary to file
+        record.write(package.summary()+"\n")
+        # Print package summary to console
+        return package.summary()
+    else:
+        return "Client package not complete"

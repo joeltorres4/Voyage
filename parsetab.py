@@ -5,9 +5,9 @@ _tabversion = '3.8'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'D206C0CC01D0B0F52BBAFB171C4B01FE'
+_lr_signature = '09BE8A7FFC09BBABE87093CDCDB45E64'
     
-_lr_action_items = {'BOOK':([0,],[12,]),'FLY':([0,],[1,]),'VISIT':([0,],[13,]),'DAYS':([28,],[33,]),'STRING':([1,3,5,8,9,13,16,20,22,23,],[22,23,24,25,26,27,28,29,30,31,]),'$end':([2,4,6,7,10,11,12,14,15,17,18,19,21,25,26,27,29,30,31,33,34,],[-3,-9,-1,-10,-7,-12,-20,-8,-2,-5,-4,0,-6,-18,-17,-19,-15,-14,-11,-16,-13,]),'FLIGHTS':([0,],[5,]),'CREATEPACKAGE':([0,],[3,]),'RESERVE':([0,],[16,]),'CARS':([0,],[9,]),'HOTELS':([0,],[20,]),'DESTINATIONS':([0,],[11,]),'DATE':([24,32,],[32,34,]),'TOURS':([0,],[8,]),}
+_lr_action_items = {'CARS':([0,],[15,]),'DESTINATIONS':([0,],[8,]),'DATE':([23,31,],[31,34,]),'BOOK':([0,],[20,]),'$end':([2,5,8,9,10,11,12,16,17,18,19,20,21,24,25,26,29,30,32,33,34,],[0,-8,-12,-1,-9,-7,-3,-2,-10,-5,-6,-20,-4,-19,-18,-15,-17,-16,-11,-14,-13,]),'FLIGHTS':([0,],[3,]),'VISIT':([0,],[4,]),'TOURS':([0,],[6,]),'HOTELS':([0,],[7,]),'RESERVE':([0,],[1,]),'DAYS':([22,],[30,]),'STRING':([1,3,4,6,7,13,14,15,27,28,],[22,23,24,25,26,27,28,29,32,33,]),'CREATEPACKAGE':([0,],[13,]),'FLY':([0,],[14,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -16,7 +16,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'statement_book':([0,],[7,]),'statement_fly':([0,],[18,]),'statement_flights':([0,],[2,]),'statement':([0,],[19,]),'statement_visit':([0,],[4,]),'statement_reserve':([0,],[21,]),'statement_tours':([0,],[14,]),'statement_destinations':([0,],[15,]),'statement_cars':([0,],[10,]),'statement_hotels':([0,],[17,]),'statement_createpackage':([0,],[6,]),}
+_lr_goto_items = {'statement_tours':([0,],[5,]),'statement_book':([0,],[17,]),'statement_reserve':([0,],[19,]),'statement_createpackage':([0,],[9,]),'statement_destinations':([0,],[16,]),'statement_hotels':([0,],[18,]),'statement_cars':([0,],[11,]),'statement_fly':([0,],[21,]),'statement_visit':([0,],[10,]),'statement_flights':([0,],[12,]),'statement':([0,],[2,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():

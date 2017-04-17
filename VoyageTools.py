@@ -114,7 +114,6 @@ def fly(destination, airline):
     global package
     try:
         package.dest(places[destination])
-        print(package.summary())
     except:
         return "invalid destination"
 

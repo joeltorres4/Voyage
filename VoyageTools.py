@@ -29,11 +29,11 @@ airlines = {
 }
 
 hotel = {
-    'BEST WESTERN': ['NY', 'OH', 'TN', 'CA', 'TX', 'FL'],
-    'MARRIOTT': ['NY', 'CA', 'TX', 'MA', 'NV', 'FL'],
-    'HOLIDAY INN': ['NY', 'WA', 'GA', 'OH', 'DC'],
-    'HILTON': ['MA', 'TX', 'NY', 'WA', 'CA', 'TX'],
-    'SHERATON': ['NY', 'MA', 'TX', 'FL', 'DC', 'CA', 'TN'],
+    'BEST WESTERN':{ ['NY', 'OH', 'TN', 'CA', 'TX', 'FL']:'$80.00'},
+    'MARRIOTT': {['NY', 'CA', 'TX', 'MA', 'NV', 'FL']:'$125.00'},
+    'HOLIDAY INN':{['NY', 'WA', 'GA', 'OH', 'DC']:'$79.99'},
+    'HILTON': {['MA', 'TX', 'NY', 'WA', 'CA', 'TX']:'$150.00},
+    'SHERATON': {['NY', 'MA', 'TX', 'FL', 'DC', 'CA', 'TN']:'$160.00'},
 }
 
 flight = {

@@ -154,12 +154,17 @@ def fly(destination, airline):
 
 
 def hotels(destinations):
-   hot = "\n"
-    for key, value in hotel.items():
-        for key1, value1 in value.items():
-            if destinations in value1:
-                    hot = hot + key + " " + key1 + "\n"
-    return hot
+    try:
+        if destinations not in places:
+            print("Invalid destination")
+            return " "
+        for key, value in hotel.items():
+            for key1, value1 in value.items():
+                if destinations in value1:
+                    print(key + " " + key1)
+    except:
+        print("invalid location")
+    return "\n"
 
 
 # param could be hotel or rental

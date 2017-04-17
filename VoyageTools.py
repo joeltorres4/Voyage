@@ -156,8 +156,7 @@ def fly(destination, airline):
 def hotels(destinations):
     try:
         if destinations not in places:
-            print("Invalid destination")
-            return " "
+            return "Invalid destination"
         for key, value in hotel.items():
             for key1, value1 in value.items():
                 if destinations in value1:
@@ -173,14 +172,15 @@ def reserve(reservation, days):
     reservation_title = reservation.title()
     # check if hotel or car
     if reservation in hotel:
-        hotel_price = 0  # remove when hotel prices are set
-        package.hotel(reservation_title, hotel_price)
-        return "Reserved " + repr(days) + " days in " + reservation_title + " hotel"
+        hot = hotel.get(reservation)  # dictionary (price : locations)
+        for hotel_price in hot:  # To extract key (hotel price)
+            # package.hotel(reservation_title, hotel_price)                                          <-- error here
+            return "Reserved " + repr(days) + " days in " + reservation_title + " hotel"
     elif reservation_title in rental_spot:
         # car rental
         for price in rental_spot[reservation_title]:  # to extract key (price)
-            package.car(reservation_title, price, days)
-        return "Reserved " + repr(days) + " days with " + reservation_title + " car rental"
+            # package.car(reservation_title, price, days)                                             <-- error here
+            return "Reserved " + repr(days) + " days with " + reservation_title + " car rental"
     else:
         return "Invalid reservation"
 
@@ -193,10 +193,10 @@ def cars(destination):
 
     # valid destination
     for company, info in rental_spot.items():
-        price = info.keys()
         locations = list(info.values()).pop()
         if destination in locations:
-            print(company, '$'.join(price))
+            for price in info:
+                print(company + " $" + price)
 
 
 def tours(destination):

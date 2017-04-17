@@ -7,7 +7,7 @@ package = Package.Package()
 record = open("record.txt", "w")
 
 places = {
-    'NY': 'New York City, NY',
+    'NY': "New York City, NY",
     'FL': 'Orlando, FL',
     'NV': 'Las Vegas, NV',
     'CA': 'Los Angeles, CA',
@@ -21,7 +21,7 @@ places = {
 }
 
 airlines = {
-    'AA': 'American Airlines',
+    'AA': "American Airlines",
     'UA': 'United Airlines',
     'JB': 'Jet Blue',
     'DA': 'Delta Airlines',
@@ -100,6 +100,7 @@ def destinations():
 
 
 def flights(destination, date1, date2):
+    global package
     package.date(date1, date2)
     try:
         ticket = flight.get(destination)
@@ -110,15 +111,19 @@ def flights(destination, date1, date2):
 
 
 def fly(destination, airline):
+    global package
     try:
         package.dest(places[destination])
+        print(package.summary())
     except:
         return "invalid destination"
+
     try:
-        package.flight(airlines.get(airline))
+        flight[destination][airline]
+        package.airline(airlines[airline])
     except:
         return "invalid airline"
-    return "reserving flight to " + destination + " with " + airline
+    return "reserving flight to " + places[destination] + " with " + airlines[airline]
 
 
 def hotels(destinations):
@@ -147,6 +152,7 @@ def visit(tours):
 
 
 def book():
+    global package
     if not package.flight == "":
         # Save package summary to file
         record.write(package.summary()+"\n")

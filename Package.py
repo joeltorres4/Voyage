@@ -22,7 +22,7 @@ class Package:
     def dest(self, destination):
         self.destination = destination
 
-    def flight(self, flight):
+    def airline(self, flight):
         self.flight = flight
 
     def date(self, date1, date2):

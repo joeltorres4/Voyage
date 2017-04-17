@@ -5,9 +5,9 @@ _tabversion = '3.8'
 
 _lr_method = 'LALR'
 
-_lr_signature = '6F17D880236E50554179E5F5D1A3374F'
+_lr_signature = 'D206C0CC01D0B0F52BBAFB171C4B01FE'
     
-_lr_action_items = {'CREATEPACKAGE':([0,],[12,]),'DESTINATIONS':([0,],[13,]),'FLIGHTS':([0,],[14,]),'FLY':([0,],[15,]),'HOTELS':([0,],[16,]),'RESERVE':([0,],[17,]),'CARS':([0,],[18,]),'TOURS':([0,],[19,]),'VISIT':([0,],[20,]),'BOOK':([0,],[21,]),'$end':([1,2,3,4,5,6,7,8,9,10,11,13,21,25,27,28,29,30,32,33,34,],[0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-12,-20,-15,-17,-18,-19,-11,-14,-16,-13,]),'STRING':([12,14,15,16,17,18,19,20,22,24,],[22,23,24,25,26,27,28,29,30,32,]),'DATE':([23,31,],[31,34,]),'DAYS':([26,],[33,]),}
+_lr_action_items = {'BOOK':([0,],[12,]),'FLY':([0,],[1,]),'VISIT':([0,],[13,]),'DAYS':([28,],[33,]),'STRING':([1,3,5,8,9,13,16,20,22,23,],[22,23,24,25,26,27,28,29,30,31,]),'$end':([2,4,6,7,10,11,12,14,15,17,18,19,21,25,26,27,29,30,31,33,34,],[-3,-9,-1,-10,-7,-12,-20,-8,-2,-5,-4,0,-6,-18,-17,-19,-15,-14,-11,-16,-13,]),'FLIGHTS':([0,],[5,]),'CREATEPACKAGE':([0,],[3,]),'RESERVE':([0,],[16,]),'CARS':([0,],[9,]),'HOTELS':([0,],[20,]),'DESTINATIONS':([0,],[11,]),'DATE':([24,32,],[32,34,]),'TOURS':([0,],[8,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -16,7 +16,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'statement':([0,],[1,]),'statement_createpackage':([0,],[2,]),'statement_destinations':([0,],[3,]),'statement_flights':([0,],[4,]),'statement_fly':([0,],[5,]),'statement_hotels':([0,],[6,]),'statement_reserve':([0,],[7,]),'statement_cars':([0,],[8,]),'statement_tours':([0,],[9,]),'statement_visit':([0,],[10,]),'statement_book':([0,],[11,]),}
+_lr_goto_items = {'statement_book':([0,],[7,]),'statement_fly':([0,],[18,]),'statement_flights':([0,],[2,]),'statement':([0,],[19,]),'statement_visit':([0,],[4,]),'statement_reserve':([0,],[21,]),'statement_tours':([0,],[14,]),'statement_destinations':([0,],[15,]),'statement_cars':([0,],[10,]),'statement_hotels':([0,],[17,]),'statement_createpackage':([0,],[6,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -39,11 +39,11 @@ _lr_productions = [
   ('statement_createpackage -> CREATEPACKAGE STRING STRING','statement_createpackage',3,'p_statement_createpackage','VoyageYacc.py',30),
   ('statement_destinations -> DESTINATIONS','statement_destinations',1,'p_statement_destinations','VoyageYacc.py',36),
   ('statement_flights -> FLIGHTS STRING DATE DATE','statement_flights',4,'p_statement_flights','VoyageYacc.py',43),
-  ('statement_fly -> FLY STRING STRING','statement_fly',3,'p_statement_fly','VoyageYacc.py',49),
-  ('statement_hotels -> HOTELS STRING','statement_hotels',2,'p_statement_hotels','VoyageYacc.py',55),
-  ('statement_reserve -> RESERVE STRING DAYS','statement_reserve',3,'p_statement_reserve','VoyageYacc.py',61),
-  ('statement_cars -> CARS STRING','statement_cars',2,'p_statement_cars','VoyageYacc.py',67),
-  ('statement_tours -> TOURS STRING','statement_tours',2,'p_statement_tours','VoyageYacc.py',73),
-  ('statement_visit -> VISIT STRING','statement_visit',2,'p_statement_visit','VoyageYacc.py',79),
-  ('statement_book -> BOOK','statement_book',1,'p_statement_book','VoyageYacc.py',85),
+  ('statement_fly -> FLY STRING STRING','statement_fly',3,'p_statement_fly','VoyageYacc.py',48),
+  ('statement_hotels -> HOTELS STRING','statement_hotels',2,'p_statement_hotels','VoyageYacc.py',54),
+  ('statement_reserve -> RESERVE STRING DAYS','statement_reserve',3,'p_statement_reserve','VoyageYacc.py',60),
+  ('statement_cars -> CARS STRING','statement_cars',2,'p_statement_cars','VoyageYacc.py',66),
+  ('statement_tours -> TOURS STRING','statement_tours',2,'p_statement_tours','VoyageYacc.py',72),
+  ('statement_visit -> VISIT STRING','statement_visit',2,'p_statement_visit','VoyageYacc.py',78),
+  ('statement_book -> BOOK','statement_book',1,'p_statement_book','VoyageYacc.py',84),
 ]

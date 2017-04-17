@@ -85,6 +85,19 @@ flight = {
     },
 }
 
+tours = {
+    'NY':{'Statue of Liberty':'$57.00','Empire State Building':'$34.00','9/11 Memorial Museum':'$24.00'},
+    'FL':{'Universal Studios Theme Park':'$125.00','Kennedy Space Center':'$54.00','Florida Everglades':'$25.00'},
+    'NV':{'Cirque du Soleil':'$145.00','Grand Canyon National Park':'$78.00','Titanic: The Artifact Exhibition':'$38.00'},
+    'CA':{'Hollywood Strip Helicopter Flight':'$200.00','Griffith Observatory':'$50.00','Legends of Hollywood':'$80.00'},
+    'TX':{'Dallas Attraction Tours':'$25.00','The George W. Bush Presidential Library and Museum':'$48.00','Dallas City Pass':'$50.00'},
+    'MA':{'Fenway Park Tour':'$30.00','Museum of Fine Arts':'$25.00','Cambridge, Lexington and Cocord':'$48.00'},
+    'DC':{'Mount Vernon and Arlington National Cementery':'$105.00','Smithsonian National Air and Museum':'$25.00','Fords Theater':'$20.00'},
+    'WA':{'Museum of Flight':'$21.00','Space Needle':'$25.00','Boeing Factory Tour':'$40.00'},
+    'TN':{'Elvis Presley Graceland VIP Tour':'$90.00','National Civil Rights Museum':'$35.00','Sun Studio Tour':'$24.00'},
+    'GA':{'Georgia Aquarium':'$44.00','CNN Atlanta Studio Tour':'$16.00','World of Coca Cola':'$20.00'},
+    'OH':{'Rock and Roll Hall of Fame':'$25.00','Cleveland Museum of Art':'$30.00','USS Cod Submarin Memorial':'$15.00'}
+}
 
 def createpackage(name, lastname):
     global package

@@ -85,7 +85,7 @@ flight = {
     },
 }
 
-tours = {
+listTours = {
     'NY':{'Statue of Liberty':'$57.00','Empire State Building':'$34.00','9/11 Memorial Museum':'$24.00'},
     'FL':{'Universal Studios Theme Park':'$125.00','Kennedy Space Center':'$54.00','Florida Everglades':'$25.00'},
     'NV':{'Cirque du Soleil':'$145.00','Grand Canyon National Park':'$78.00','Titanic: The Artifact Exhibition':'$38.00'},
@@ -156,11 +156,18 @@ def cars(destination):
 
 
 def tours(destination):
-    return "displaying available tours on given destination..."
+    global package
+    try:
+        list = listTours[destination]
+        for x,y in list.items():
+            print(x,y)
+    except:
+        print("invalid location")
+    return "\n"
 
 
 # tours is a list of places to visit
-def visit(tours):
+def visit(tour):
     return "reserve tour(s) on given destination..."
 
 

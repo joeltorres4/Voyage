@@ -1,7 +1,0 @@
-Name: FELIX GONZALEZ
-Destination: New York City, NY
-Airline: American Airlines
-Hotel: 
-Rental Car: 
-Tours: []
-Total Price: 0

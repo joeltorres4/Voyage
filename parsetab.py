@@ -5,9 +5,9 @@ _tabversion = '3.8'
 
 _lr_method = 'LALR'
 
-_lr_signature = '97FC53877B1EB45342DB1A03F5DA25CF'
+_lr_signature = '98CCB290DE2E4177C59C21DC86C8277D'
     
-_lr_action_items = {'VISIT':([0,],[1,]),'STRING':([1,3,7,8,13,16,17,20,23,24,],[22,23,24,25,26,27,28,29,30,31,]),'DESTINATIONS':([0,],[14,]),'HOTELS':([0,],[16,]),'DAYS':([28,],[33,]),'CREATEPACKAGE':([0,],[3,]),'RESERVE':([0,],[17,]),'FLY':([0,],[7,]),'DATE':([26,32,],[32,34,]),'BOOK':([0,],[18,]),'CARS':([0,],[20,]),'TOURS':([0,],[8,]),'FLIGHTS':([0,],[13,]),'$end':([2,4,5,6,9,10,11,12,14,15,18,19,21,22,25,27,29,30,31,33,34,],[-6,-3,-9,-1,-5,0,-8,-10,-12,-7,-20,-2,-4,-19,-18,-15,-17,-11,-14,-16,-13,]),}
+_lr_action_items = {'STRING':([5,7,9,11,15,16,19,20,22,29,],[22,23,24,25,26,27,28,29,30,33,]),'BOOK':([0,],[3,]),'VISIT':([0,],[15,]),'CREATEPACKAGE':([0,],[5,]),'DAYS':([27,],[32,]),'FLIGHTS':([0,],[7,]),'RESERVE':([0,],[16,]),'DESTINATIONS':([0,],[10,]),'$end':([1,2,3,4,6,8,10,12,13,14,17,18,21,24,25,26,28,30,32,33,34,],[-9,0,-20,-7,-1,-8,-12,-4,-10,-2,-5,-6,-3,-15,-17,-19,-18,-11,-16,-14,-13,]),'HOTELS':([0,],[9,]),'TOURS':([0,],[19,]),'CARS':([0,],[11,]),'FLY':([0,],[20,]),'DATE':([23,31,],[31,34,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -16,7 +16,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'statement_hotels':([0,],[9,]),'statement_reserve':([0,],[2,]),'statement_destinations':([0,],[19,]),'statement_createpackage':([0,],[6,]),'statement_cars':([0,],[15,]),'statement_flights':([0,],[4,]),'statement':([0,],[10,]),'statement_tours':([0,],[11,]),'statement_visit':([0,],[5,]),'statement_book':([0,],[12,]),'statement_fly':([0,],[21,]),}
+_lr_goto_items = {'statement_tours':([0,],[8,]),'statement_hotels':([0,],[17,]),'statement_visit':([0,],[1,]),'statement_fly':([0,],[12,]),'statement_cars':([0,],[4,]),'statement_reserve':([0,],[18,]),'statement':([0,],[2,]),'statement_book':([0,],[13,]),'statement_destinations':([0,],[14,]),'statement_createpackage':([0,],[6,]),'statement_flights':([0,],[21,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():

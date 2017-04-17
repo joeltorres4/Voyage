@@ -154,10 +154,11 @@ def fly(destination, airline):
 
 
 def hotels(destinations):
-    hot = "\n"
+   hot = "\n"
     for key, value in hotel.items():
-        if destinations in value:
-            hot = hot + key + "\n"
+        for key1, value1 in value.items():
+            if destinations in value1:
+                    hot = hot + key + " " + key1 + "\n"
     return hot
 
 

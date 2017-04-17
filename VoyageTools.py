@@ -88,6 +88,7 @@ flight = {
 
 def createpackage(name, lastname):
     global package
+    package = Package.Package()
     package.create(name, lastname)
     return "creating package for " + name + " " + lastname
 
@@ -105,7 +106,7 @@ def flights(destination, date1, date2):
     try:
         ticket = flight.get(destination)
         for x, y in ticket.items():
-            print(x, y)
+            print(airlines[x], y)
     except:
         return "invalid location"
 

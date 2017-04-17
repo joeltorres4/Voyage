@@ -86,166 +86,166 @@ state 0
     (19) statement_visit -> . VISIT STRING
     (20) statement_book -> . BOOK
 
-    CREATEPACKAGE   shift and go to state 13
-    DESTINATIONS    shift and go to state 8
-    FLIGHTS         shift and go to state 3
-    FLY             shift and go to state 14
-    HOTELS          shift and go to state 7
-    RESERVE         shift and go to state 1
-    CARS            shift and go to state 15
-    TOURS           shift and go to state 6
-    VISIT           shift and go to state 4
-    BOOK            shift and go to state 20
+    CREATEPACKAGE   shift and go to state 3
+    DESTINATIONS    shift and go to state 14
+    FLIGHTS         shift and go to state 13
+    FLY             shift and go to state 7
+    HOTELS          shift and go to state 16
+    RESERVE         shift and go to state 17
+    CARS            shift and go to state 20
+    TOURS           shift and go to state 8
+    VISIT           shift and go to state 1
+    BOOK            shift and go to state 18
 
-    statement_tours                shift and go to state 5
-    statement_book                 shift and go to state 17
-    statement_reserve              shift and go to state 19
-    statement_createpackage        shift and go to state 9
-    statement_destinations         shift and go to state 16
-    statement_hotels               shift and go to state 18
-    statement_cars                 shift and go to state 11
+    statement_reserve              shift and go to state 2
+    statement_tours                shift and go to state 11
+    statement_destinations         shift and go to state 19
+    statement_createpackage        shift and go to state 6
+    statement_hotels               shift and go to state 9
+    statement_flights              shift and go to state 4
+    statement                      shift and go to state 10
+    statement_cars                 shift and go to state 15
+    statement_visit                shift and go to state 5
+    statement_book                 shift and go to state 12
     statement_fly                  shift and go to state 21
-    statement_visit                shift and go to state 10
-    statement_flights              shift and go to state 12
-    statement                      shift and go to state 2
 
 state 1
 
-    (16) statement_reserve -> RESERVE . STRING DAYS
+    (19) statement_visit -> VISIT . STRING
 
     STRING          shift and go to state 22
 
 
 state 2
 
-    (0) S' -> statement .
+    (6) statement -> statement_reserve .
 
+    $end            reduce using rule 6 (statement -> statement_reserve .)
 
 
 state 3
 
-    (13) statement_flights -> FLIGHTS . STRING DATE DATE
+    (11) statement_createpackage -> CREATEPACKAGE . STRING STRING
 
     STRING          shift and go to state 23
 
 
 state 4
 
-    (19) statement_visit -> VISIT . STRING
+    (3) statement -> statement_flights .
 
-    STRING          shift and go to state 24
+    $end            reduce using rule 3 (statement -> statement_flights .)
 
 
 state 5
-
-    (8) statement -> statement_tours .
-
-    $end            reduce using rule 8 (statement -> statement_tours .)
-
-
-state 6
-
-    (18) statement_tours -> TOURS . STRING
-
-    STRING          shift and go to state 25
-
-
-state 7
-
-    (15) statement_hotels -> HOTELS . STRING
-
-    STRING          shift and go to state 26
-
-
-state 8
-
-    (12) statement_destinations -> DESTINATIONS .
-
-    $end            reduce using rule 12 (statement_destinations -> DESTINATIONS .)
-
-
-state 9
-
-    (1) statement -> statement_createpackage .
-
-    $end            reduce using rule 1 (statement -> statement_createpackage .)
-
-
-state 10
 
     (9) statement -> statement_visit .
 
     $end            reduce using rule 9 (statement -> statement_visit .)
 
 
-state 11
+state 6
 
-    (7) statement -> statement_cars .
+    (1) statement -> statement_createpackage .
 
-    $end            reduce using rule 7 (statement -> statement_cars .)
-
-
-state 12
-
-    (3) statement -> statement_flights .
-
-    $end            reduce using rule 3 (statement -> statement_flights .)
+    $end            reduce using rule 1 (statement -> statement_createpackage .)
 
 
-state 13
-
-    (11) statement_createpackage -> CREATEPACKAGE . STRING STRING
-
-    STRING          shift and go to state 27
-
-
-state 14
+state 7
 
     (14) statement_fly -> FLY . STRING STRING
 
-    STRING          shift and go to state 28
+    STRING          shift and go to state 24
 
 
-state 15
+state 8
 
-    (17) statement_cars -> CARS . STRING
+    (18) statement_tours -> TOURS . STRING
 
-    STRING          shift and go to state 29
-
-
-state 16
-
-    (2) statement -> statement_destinations .
-
-    $end            reduce using rule 2 (statement -> statement_destinations .)
+    STRING          shift and go to state 25
 
 
-state 17
-
-    (10) statement -> statement_book .
-
-    $end            reduce using rule 10 (statement -> statement_book .)
-
-
-state 18
+state 9
 
     (5) statement -> statement_hotels .
 
     $end            reduce using rule 5 (statement -> statement_hotels .)
 
 
-state 19
+state 10
 
-    (6) statement -> statement_reserve .
-
-    $end            reduce using rule 6 (statement -> statement_reserve .)
+    (0) S' -> statement .
 
 
-state 20
+
+state 11
+
+    (8) statement -> statement_tours .
+
+    $end            reduce using rule 8 (statement -> statement_tours .)
+
+
+state 12
+
+    (10) statement -> statement_book .
+
+    $end            reduce using rule 10 (statement -> statement_book .)
+
+
+state 13
+
+    (13) statement_flights -> FLIGHTS . STRING DATE DATE
+
+    STRING          shift and go to state 26
+
+
+state 14
+
+    (12) statement_destinations -> DESTINATIONS .
+
+    $end            reduce using rule 12 (statement_destinations -> DESTINATIONS .)
+
+
+state 15
+
+    (7) statement -> statement_cars .
+
+    $end            reduce using rule 7 (statement -> statement_cars .)
+
+
+state 16
+
+    (15) statement_hotels -> HOTELS . STRING
+
+    STRING          shift and go to state 27
+
+
+state 17
+
+    (16) statement_reserve -> RESERVE . STRING DAYS
+
+    STRING          shift and go to state 28
+
+
+state 18
 
     (20) statement_book -> BOOK .
 
     $end            reduce using rule 20 (statement_book -> BOOK .)
+
+
+state 19
+
+    (2) statement -> statement_destinations .
+
+    $end            reduce using rule 2 (statement -> statement_destinations .)
+
+
+state 20
+
+    (17) statement_cars -> CARS . STRING
+
+    STRING          shift and go to state 29
 
 
 state 21
@@ -257,23 +257,23 @@ state 21
 
 state 22
 
-    (16) statement_reserve -> RESERVE STRING . DAYS
+    (19) statement_visit -> VISIT STRING .
 
-    DAYS            shift and go to state 30
+    $end            reduce using rule 19 (statement_visit -> VISIT STRING .)
 
 
 state 23
 
-    (13) statement_flights -> FLIGHTS STRING . DATE DATE
+    (11) statement_createpackage -> CREATEPACKAGE STRING . STRING
 
-    DATE            shift and go to state 31
+    STRING          shift and go to state 30
 
 
 state 24
 
-    (19) statement_visit -> VISIT STRING .
+    (14) statement_fly -> FLY STRING . STRING
 
-    $end            reduce using rule 19 (statement_visit -> VISIT STRING .)
+    STRING          shift and go to state 31
 
 
 state 25
@@ -285,23 +285,23 @@ state 25
 
 state 26
 
+    (13) statement_flights -> FLIGHTS STRING . DATE DATE
+
+    DATE            shift and go to state 32
+
+
+state 27
+
     (15) statement_hotels -> HOTELS STRING .
 
     $end            reduce using rule 15 (statement_hotels -> HOTELS STRING .)
 
 
-state 27
-
-    (11) statement_createpackage -> CREATEPACKAGE STRING . STRING
-
-    STRING          shift and go to state 32
-
-
 state 28
 
-    (14) statement_fly -> FLY STRING . STRING
+    (16) statement_reserve -> RESERVE STRING . DAYS
 
-    STRING          shift and go to state 33
+    DAYS            shift and go to state 33
 
 
 state 29
@@ -313,30 +313,30 @@ state 29
 
 state 30
 
-    (16) statement_reserve -> RESERVE STRING DAYS .
+    (11) statement_createpackage -> CREATEPACKAGE STRING STRING .
 
-    $end            reduce using rule 16 (statement_reserve -> RESERVE STRING DAYS .)
+    $end            reduce using rule 11 (statement_createpackage -> CREATEPACKAGE STRING STRING .)
 
 
 state 31
+
+    (14) statement_fly -> FLY STRING STRING .
+
+    $end            reduce using rule 14 (statement_fly -> FLY STRING STRING .)
+
+
+state 32
 
     (13) statement_flights -> FLIGHTS STRING DATE . DATE
 
     DATE            shift and go to state 34
 
 
-state 32
-
-    (11) statement_createpackage -> CREATEPACKAGE STRING STRING .
-
-    $end            reduce using rule 11 (statement_createpackage -> CREATEPACKAGE STRING STRING .)
-
-
 state 33
 
-    (14) statement_fly -> FLY STRING STRING .
+    (16) statement_reserve -> RESERVE STRING DAYS .
 
-    $end            reduce using rule 14 (statement_fly -> FLY STRING STRING .)
+    $end            reduce using rule 16 (statement_reserve -> RESERVE STRING DAYS .)
 
 
 state 34

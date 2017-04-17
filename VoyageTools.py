@@ -99,6 +99,14 @@ listTours = {
     'OH':{'Rock and Roll Hall of Fame':'$25.00','Cleveland Museum of Art':'$30.00','USS Cod Submarin Memorial':'$15.00'}
 }
 
+rental_spot = {
+    'Hertz':{'$50.00':['NY','OH','FL','CA','FL']},
+    'Avis':{'$55.00':['NV','GA','TX','TN','MA']},
+    'Enterprise':{'$52.00':['NY','OH','DC','MA','CA']},
+    'Dollar':{'$60.00':['CA','TN','MA','WA','TX']},
+    'Thrifty':{'$49.00':['CA','TX','TN','MA','DC','FL']}
+}
+
 def createpackage(name, lastname):
     global package
     package = Package.Package()

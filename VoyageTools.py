@@ -3,7 +3,7 @@
 # ------------------------------------------------------------
 import Package
 
-package = Package.Package()
+travel_package = Package.Package()
 
 places = {
     'NY': "New York City, NY",
@@ -20,7 +20,7 @@ places = {
 }
 
 airlines = {
-    'AA': "American Airlines",
+    'AA': 'American Airlines',
     'UA': 'United Airlines',
     'JB': 'Jet Blue',
     'DA': 'Delta Airlines',
@@ -28,7 +28,7 @@ airlines = {
     'SA': 'Southwest Airlines',
 }
 
-hotel = {
+hotels = {
     'BEST WESTERN': {'80.00': ['NY', 'OH', 'TN', 'CA', 'TX', 'FL']},
     'MARRIOTT': {'125.00': ['NY', 'CA', 'TX', 'MA', 'NV', 'FL']},
     'HOLIDAY INN': {'79.99': ['NY', 'WA', 'GA', 'OH', 'DC']},
@@ -112,12 +112,11 @@ rental_spot = {
     'Thrifty': {'49.00': ['CA', 'TX', 'TN', 'MA', 'DC', 'FL']}
 }
 
-
 def createpackage(name, lastname):
-    global package
-    package = Package.Package()
-    package.create(name, lastname)
-    return "Package created for " + name + " " + lastname
+    global travel_package
+    travel_package = Package.Package()
+    travel_package.create(name, lastname)
+    return "Travel package for " + name + " " + lastname + " created successfully!"
 
 
 def destinations():
@@ -128,8 +127,8 @@ def destinations():
 
 
 def flights(destination, date1, date2):
-    global package
-    package.date(date1, date2)
+    global travel_package
+    travel_package.date(date1, date2)
     try:
         ticket = flight.get(destination)
         for x, y in ticket.items():
@@ -139,48 +138,48 @@ def flights(destination, date1, date2):
 
 
 def fly(destination, airline):
-    global package
+    global travel_package
     try:
-        package.dest(places[destination])
+        travel_package.dest(places[destination])
     except:
         return "invalid destination"
 
     try:
         flight[destination][airline]
-        package.airline(airlines[airline])
+        travel_package.airline(airlines[airline])
     except:
         return "Invalid airline"
     return "Flight to " + places[destination] + " with " + airlines[airline] + " reserved successfully"
 
 
-def hotels(destinations):
+def hotels(destination):
     try:
-        if destinations not in places:
+        if destination not in places:
             return "Invalid destination"
-        for key, value in hotel.items():
+        for key, value in hotels.items():
             for key1, value1 in value.items():
-                if destinations in value1:
+                if destination in value1:
                     print(key + " " + key1)
     except:
-        print("invalid location")
+        print("Invalid location")
     return "\n"
 
 
 # param could be hotel or rental
 def reserve(reservation, days):
-    global package
-    reservation_title = reservation.title()
+    global travel_package
+    # reservation_title = reservation.title()
     # check if hotel or car
-    if reservation in hotel:
-        hot = hotel.get(reservation)  # dictionary (price : locations)
+    if reservation in hotels:
+        hot = hotels.get(reservation)  # dictionary (price : locations)
         for hotel_price in hot:  # To extract key (hotel price)
-            # package.hotel(reservation_title, hotel_price)                                          <-- error here
-            return "Reserved " + repr(days) + " days in " + reservation_title + " hotel"
-    elif reservation_title in rental_spot:
+            travel_package.hotel(reservation, hotel_price)  # <-- error here
+            return "Reserved " + repr(days) + " days in " + reservation + " hotel"
+    elif reservation in rental_spot:
         # car rental
-        for price in rental_spot[reservation_title]:  # to extract key (price)
-            # package.car(reservation_title, price, days)                                             <-- error here
-            return "Reserved " + repr(days) + " days with " + reservation_title + " car rental"
+        for price in rental_spot[reservation]:  # to extract key (price)
+            travel_package.car(reservation, price, days)  # <-- error here
+            return "Reserved " + repr(days) + " days with " + reservation + " car rental"
     else:
         return "Invalid reservation"
 
@@ -200,7 +199,7 @@ def cars(destination):
 
 
 def tours(destination):
-    global package
+    global travel_package
     try:
         list = listTours[destination]
         for x, y in list.items():
@@ -216,13 +215,13 @@ def visit(tour):
 
 
 def book():
-    global package
-    if not package.flight == "":
+    global travel_package
+    if not travel_package.flight == "":
         # Save package summary to file
         record = open("record.txt", "a")
-        record.write(package.summary() + "\n")
+        record.write(travel_package.summary() + "\n")
         record.close()
         # Print package summary to console
-        return package.summary()
+        return travel_package.summary()
     else:
         return "Package not ready to book"

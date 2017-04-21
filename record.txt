@@ -1,21 +1,47 @@
-Name: IGOR BU
+
+Name: Joel Torres
 Destination: New York City, NY
 Airline: American Airlines
 Hotel: 
+Check-in: 
+Check-out: 
 Rental Car: 
 Tours: []
 Total Price: 0
-Name: JOEL TORRES
+Name: Felix Gonzalez
 Destination: Los Angeles, CA
 Airline: American Airlines
 Hotel: 
+Check-in: 
+Check-out: 
 Rental Car: 
 Tours: []
 Total Price: 0
-Name: JOEL TORRES
+Name: Joel Torres
 Destination: New York City, NY
 Airline: American Airlines
 Hotel: 
+Check-in: 
+Check-out: 
 Rental Car: 
 Tours: []
 Total Price: 0
+Name: Joel Torres
+Destination: New York City, NY
+Airline: American Airlines
+Hotel: 
+Check-in: 
+Check-out: 
+Rental Car: 
+Tours: []
+Total Price: 0
+
+Name: Joel Torres
+Destination: Orlando, FL
+Airline: Jet Blue
+Hotel: 
+Check-in: 4/21/2017
+Check-out: 4/25/2017
+Rental Car: 
+Tours: []
+Total Price: 175.0

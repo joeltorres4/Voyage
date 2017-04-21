@@ -52,8 +52,7 @@ def p_statement_fly(p):
 
 def p_statement_hotels(p):
     'statement_hotels : HOTELS STRING'
-    res = VoyageTools.hotels(p[2])
-    print(res)
+    VoyageTools.hotels(p[2])
 
 
 def p_statement_reserve(p):

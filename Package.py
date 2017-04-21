@@ -22,18 +22,19 @@ class Package:
     def dest(self, destination):
         self.destination = destination
 
-    def airline(self, flight):
+    def airline(self, flight, flight_price):
         self.flight = flight
+        self.price += flight_price
 
     def date(self, date1, date2):
         self.date1 = date1
         self.date2 = date2
 
-    def hotel(self, hotel, price):
-        self.hotel = hotel
-        self.price += price
+    def setHotel(self, hot, price, days):
+        self.hotel = hot
+        self.price += price * days
 
-    def car(self, car, price, days):
+    def setCar(self, car, price, days):
         self.car = car
         self.price += price * days
 
@@ -41,7 +42,8 @@ class Package:
         self.tours.append(tour)
 
     def summary(self):
-        return "Name: " + self.name + " " + self.lastName + \
+        return "\nName: " + self.name + " " + self.lastName + \
                "\nDestination: " + self.destination + "\nAirline: " + self.flight + \
-               "\nHotel: " + self.hotel + "\nRental Car: " + self.car + "\nTours: " + repr(self.tours) + \
-               "\nTotal Price: " + repr(self.price)
+               "\nHotel: " + self.hotel + "\nCheck-in: " + self.date1 + "\nCheck-out: " + self.date2 + \
+               "\nRental Car: " + self.car + "\nTours: " + repr(self.tours) + \
+               "\nTotal Price: " + repr(self.price)+"\n"

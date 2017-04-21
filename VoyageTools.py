@@ -28,7 +28,7 @@ airlines = {
     'SA': 'Southwest Airlines',
 }
 
-hotels = {
+hotels_list = {
     'BEST WESTERN': {'80.00': ['NY', 'OH', 'TN', 'CA', 'TX', 'FL']},
     'MARRIOTT': {'125.00': ['NY', 'CA', 'TX', 'MA', 'NV', 'FL']},
     'HOLIDAY INN': {'79.99': ['NY', 'WA', 'GA', 'OH', 'DC']},
@@ -112,9 +112,12 @@ rental_spot = {
     'Thrifty': {'49.00': ['CA', 'TX', 'TN', 'MA', 'DC', 'FL']}
 }
 
+
 def createpackage(name, lastname):
     global travel_package
-    travel_package = Package.Package()
+    travel_package = Package.Package()  # create new travel package
+    name = name.title()
+    lastname = lastname.title()
     travel_package.create(name, lastname)
     return "Travel package for " + name + " " + lastname + " created successfully!"
 
@@ -145,8 +148,8 @@ def fly(destination, airline):
         return "invalid destination"
 
     try:
-        flight[destination][airline]
-        travel_package.airline(airlines[airline])
+        flight_price = float(flight.get(destination).get(airline))
+        travel_package.airline(airlines[airline], flight_price)
     except:
         return "Invalid airline"
     return "Flight to " + places[destination] + " with " + airlines[airline] + " reserved successfully"
@@ -156,29 +159,28 @@ def hotels(destination):
     try:
         if destination not in places:
             return "Invalid destination"
-        for key, value in hotels.items():
+        for key, value in hotels_list.items():
             for key1, value1 in value.items():
                 if destination in value1:
-                    print(key + " " + key1)
+                    print(key + " $" + key1 + "/night")
     except:
         print("Invalid location")
-    return "\n"
 
 
 # param could be hotel or rental
 def reserve(reservation, days):
-    global travel_package
-    # reservation_title = reservation.title()
     # check if hotel or car
-    if reservation in hotels:
-        hot = hotels.get(reservation)  # dictionary (price : locations)
+    if reservation in hotels_list:
+        hot = hotels_list.get(reservation)  # dictionary (price : locations)
         for hotel_price in hot:  # To extract key (hotel price)
-            travel_package.hotel(reservation, hotel_price)  # <-- error here
-            return "Reserved " + repr(days) + " days in " + reservation + " hotel"
-    elif reservation in rental_spot:
+            hotel_price = float(hotel_price)
+            travel_package.setHotel(reservation.title(), hotel_price, int(days))
+            return "Reserved " + repr(days) + " days in " + reservation + " hotel for $" + repr(hotel_price * int(days))
+    elif reservation.title() in rental_spot:
         # car rental
-        for price in rental_spot[reservation]:  # to extract key (price)
-            travel_package.car(reservation, price, days)  # <-- error here
+        for car_price in rental_spot[reservation.title()]:  # to extract key (price)
+            car_price = float(car_price)
+            travel_package.setCar(reservation.title(), car_price, int(days))
             return "Reserved " + repr(days) + " days with " + reservation + " car rental"
     else:
         return "Invalid reservation"
@@ -209,8 +211,8 @@ def tours(destination):
     return "\n"
 
 
-# tours is a list of places to visit
 def visit(tour):
+    # append tour to travel_package tour list
     return "reserve tour(s) on given destination..."
 
 
@@ -219,7 +221,7 @@ def book():
     if not travel_package.flight == "":
         # Save package summary to file
         record = open("record.txt", "a")
-        record.write(travel_package.summary() + "\n")
+        record.write(travel_package.summary())
         record.close()
         # Print package summary to console
         return travel_package.summary()

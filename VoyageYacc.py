@@ -67,8 +67,7 @@ def p_statement_cars(p):
 
 def p_statement_tours(p):
     'statement_tours : TOURS STRING'
-    res = VoyageTools.tours(p[2])
-    print(res)
+    VoyageTools.tours(p[2])
 
 
 def p_statement_visit(p):

@@ -38,12 +38,13 @@ class Package:
         self.car = car
         self.price += price * days
 
-    def tours(self, tour):
+    def setTours(self, tour, price):
         self.tours.append(tour)
+        self.price += price
 
     def summary(self):
         return "\nName: " + self.name + " " + self.lastName + \
                "\nDestination: " + self.destination + "\nAirline: " + self.flight + \
                "\nHotel: " + self.hotel + "\nCheck-in: " + self.date1 + "\nCheck-out: " + self.date2 + \
                "\nRental Car: " + self.car + "\nTours: " + repr(self.tours) + \
-               "\nTotal Price: " + repr(self.price)+"\n"
+               "\nTotal Price: $" + repr(self.price) + "\n"

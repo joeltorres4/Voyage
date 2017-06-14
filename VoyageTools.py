@@ -23,12 +23,12 @@ places = {
 
 # Airlines dictionary
 airlines = {
-    'AA': 'American Airlines',
-    'UA': 'United Airlines',
-    'JB': 'Jet Blue',
-    'DA': 'Delta Airlines',
-    'CA': 'Continental Airlines',
-    'SA': 'Southwest Airlines',
+    'AA': 'American Airlines (AA)',
+    'UA': 'United Airlines (UA)',
+    'JB': 'Jet Blue (JB)',
+    'DA': 'Delta Airlines (DA)',
+    'CA': 'Continental Airlines (CA)',
+    'SA': 'Southwest Airlines (SA)',
 }
 
 # Hotels dictionary
@@ -150,9 +150,11 @@ def flights(destination, date1, date2):
     global travel_package
     travel_package.date(date1, date2)
     try:
+        # dictionary: airline, price
         ticket = flight.get(destination)
-        for x, y in ticket.items():
-            print(airlines[x], y)
+        # x is airline, y is price
+        for info in ticket:
+            print(info + ", $" + repr(ticket[info]))
     except:
         return "Invalid location"
 

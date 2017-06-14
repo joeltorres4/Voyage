@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../../fggon/OneDrive/Documents/GitHub/Voyage/.idea/EnrollMe.iml" filepath="$PROJECT_DIR$/../../../fggon/OneDrive/Documents/GitHub/Voyage/.idea/EnrollMe.iml" />
+      <module fileurl="file://D:/Google Drive/RUM/Fifth Year/Spring 2017/ICOM4036/Exam 2/Filters/.idea/Filters.iml" filepath="D:/Google Drive/RUM/Fifth Year/Spring 2017/ICOM4036/Exam 2/Filters/.idea/Filters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PL_E2/.idea/PL_E2.iml" filepath="$PROJECT_DIR$/../PL_E2/.idea/PL_E2.iml" />
+      <module fileurl="file://D:/Google Drive/RUM/Fifth Year/Spring 2017/ICOM4036/Exam 2/Torres_Joel/.idea/Torres_Joel.iml" filepath="D:/Google Drive/RUM/Fifth Year/Spring 2017/ICOM4036/Exam 2/Torres_Joel/.idea/Torres_Joel.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Voyage.iml" filepath="$PROJECT_DIR$/.idea/Voyage.iml" />
     </modules>
   </component>

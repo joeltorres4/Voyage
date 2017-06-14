@@ -9,7 +9,7 @@ from VoyageYacc import parser
 def main():
     while True:
         try:
-            s = input('Voyage > ')
+            s = input('\nVoyage > ')
         except EOFError:
             break
 

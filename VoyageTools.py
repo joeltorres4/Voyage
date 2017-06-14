@@ -154,7 +154,7 @@ def flights(destination, date1, date2):
         ticket = flight.get(destination)
         # x is airline, y is price
         for info in ticket:
-            print(info + ", $" + repr(ticket[info]))
+            print(airlines.get(info) + ", $" + repr(ticket[info]))
     except:
         return "Invalid location"
 
